@@ -34,11 +34,11 @@ const items = [
 ];
 
 function itemCardGenerator(item) {
-  return `<div class="flex column center item-card">
+  return `<div class="flex column center item-card" id="1">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
             <p>${item.deadline}</p>
-            <p>${item.status}</p>
+            <p id="status">${item.status}</p>
             <div class="flex space-between">
                 <button class="primary-button markAsDone" item-id= ${item.id}>Mark as done</button>
                 <button class="secondary-button delete" item-id= ${item.id}>delete</button>
@@ -56,25 +56,12 @@ function itemsLoader() {
 
     itemsContainer.innerHTML += itemCard;
   }
-
-  markAsDoneButtons = document.querySelectorAll(".MarkAsDone");
-
-  console.log(markAsDoneButtons);
-
-  for (let i = 0; i < markAsDoneButtons.length; i++) {
-    const button = markAsDoneButtons[i];
-
-    button.addEventListener("click", function () {
-      console.log(button.classList);
-      button.classList.add("class");
-      button.classList.remove("class");
-      button.classList.toggle("class");
-
-      button.getAttribute("item-id");
-      console.log(items[i]);
-    });
-  }
 }
+
+
+
+
+
 
 itemsLoader();
 
@@ -84,9 +71,59 @@ addButton.addEventListener("click", function () {
     title: "New item",
     description: "This is a new item",
     deadline:"date5",
-    status:"pending"  };
+    status:"pending" };
 
   items.push(newitem);
 
   itemsLoader();
 });
+
+
+
+
+
+markAsDoneButtons = document.querySelectorAll(".markAsDone");
+
+console.log(markAsDoneButtons);
+
+for (let i = 0; i < markAsDoneButtons.length; i++) {
+  const button = markAsDoneButtons[i];
+
+  button.addEventListener("click", function () {
+    console.log(button.classList);
+    button.classList.add("done");
+    const status = document.getElementById('status');
+    status.textContent="Done"
+    const bg=document.getElementById("1")
+    bg.classList.toggle("done-item-card")
+
+
+    button.getAttribute("item-id");
+    console.log(items[i]);
+  });
+
+
+}
+
+delButtons = document.querySelectorAll(".delete");
+
+console.log(delButtons);
+
+for (let i = 0; i < delButtons.length; i++) {
+  const delButton = delButtons[i];
+
+  delButton.addEventListener("click", function () {
+    console.log(delButton.classList);
+    delButton.classList.toggle("deleted");
+    const status = document.getElementById('status');
+    status.textContent="Deleted"
+    const bg=document.getElementById("1")
+    bg.classList.toggle("deleted-item-card")
+
+
+    button.getAttribute("item-id");
+    console.log(items[i]);
+  });
+
+
+}

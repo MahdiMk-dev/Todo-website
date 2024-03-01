@@ -103,6 +103,9 @@
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
+  .done{
+    background-color: 333;
+  }
   
   .secondary-button {
     padding: 10px 20px;
@@ -150,6 +153,35 @@
     width: 300px;
     height: 350px;
     background-color: #c2c2c267;
+    color: black;
+    transition: all 0.3s ease-in-out;
+    border: solid black 5px;
+    border-radius: 10px;
+  }
+  .deleted-item-card {
+    padding: 20px;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 200px;
+    width: 300px;
+    height: 350px;
+    background-color: red;
+    color: black;
+    transition: all 0.3s ease-in-out;
+    border: solid black 5px;
+    border-radius: 10px;
+  }
+
+  .done-item-card {
+    padding: 20px;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 200px;
+    width: 300px;
+    height: 350px;
+    background-color: green;
     color: black;
     transition: all 0.3s ease-in-out;
     border: solid black 5px;
