@@ -91,7 +91,7 @@ for (let i = 0; i < markAsDoneButtons.length; i++) {
 
   button.addEventListener("click", function () {
     console.log(button.classList);
-    button.classList.add("done");
+    button.classList.toggle("done");
     const status = document.getElementById('status');
     status.textContent="Done"
     const bg=document.getElementById("1")
