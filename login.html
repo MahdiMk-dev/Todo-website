@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/utilities.css">
+
 </head>
 <body>
-  
+  <header class="flex">
+    <ul class="flex row nav-buttons center">
+      <li class="flex center">Home</li>
+      <li class="flex center">Profile</li>
+      <li class="flex center">About</li>
+    </ul>
+  </header>
+
+  <section class="flex hero">
+    <img src="./images/hero.PNG" alt="Hero" />
+
+  </section>
+
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="validateLogin()">Login</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
